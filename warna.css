@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a1c3e 0%, #021021 90%);
+      font-family: 'Poppins', sans-serif;
+      color: #eef3ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 3rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1 {
+      font-weight: 600;
+      color: #00aaff;
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      text-shadow: 0 0 12px #00aaffcc, 0 0 20px #00aaffbb;
+      user-select: none;
+    }
+    header {
+      width: 100%;
+      max-width: 1080px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Neon glow logo */
+    .logo {
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #00cfff;
+      text-shadow:
+        0 0 8px #00cfff,
+        0 0 15px #00cfff,
+        0 0 30px #00e7ff,
+        0 0 60px #00e7ff;
+      user-select: none;
+    }
+
+    /* Matrices Container - for matrices input */
+    .matrices-wrapper {
+      max-width: 1080px;
+      width: 100%;
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+      user-select: none;
+    }
+
+    /* Individual Matrix Section */
+    .matrix-section {
+      background: #0b1640;
+      border-radius: 16px;
+      box-shadow:
+        0 0 25px #02c8ffcc inset,
+        0 0 35px #02c8ffaa;
+      flex: 1 1 420px;
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+      padding: 1.4rem 1.8rem;
+      transition: opacity 0.3s ease, max-height 0.4s ease;
+    }
+    .matrix-section.hidden {
+      opacity: 0;
+      max-height: 0;
+      padding: 0 1.8rem;
+      overflow: hidden;
+      user-select: none;
+      pointer-events: none;
+    }
+    .matrix-section h2 {
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #7bdfff;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 0 8px #00bfffcc;
+    }
+
+    /* Ordo controls for each matrix */
+    .input-ordo {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .input-ordo label {
+      color: #a8cfff;
+      font-weight: 600;
+      font-size: 1rem;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .input-ordo select {
+      background: #022051;
+      border: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #c6e8ff;
+      cursor: pointer;
+      box-shadow: 0 0 8px #00aaee77;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    .input-ordo select:hover, .input-ordo select:focus {
+      background: #0340a6;
+      outline: none;
+    }
+    .input-ordo button {
+      background: #00aaff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      color: #f0faff;
+      border: none;
+      cursor: pointer;
+      box-shadow:
+        0 0 15px #00aaffcc,
+        0 0 40px #00ccff77;
+      transition: background 0.25s ease;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .input-ordo button:hover {
+      background: #33c6ff;
+      box-shadow:
+        0 0 25px #00aaffee,
+        0 0 60px #00ddffdd;
+    }
+    .input-ordo button:active {
+      transform: scale(0.96);
+    }
+
+    /* Matrix Input Grid */
+    .matrix-grid {
+      display: grid;
+      gap: 0.8rem;
+      background: #04193b;
+      border-radius: 12px;
+      padding: 1rem;
+      justify-content: center;
+      transition: all 0.3s ease;
+      user-select: text;
+    }
+    input.matrix-cell {
+      width: 54px;
+      height: 38px;
+      border-radius: 8px;
+      border: none;
+      background: #0c2659;
+      color: #c6e8ff;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow:
+        0 0 4px #009ee799 inset,
+        0 0 10px #007acc99;
+      transition: background 0.25s ease;
+      user-select: text;
+    }
+    input.matrix-cell:focus {
+      outline: none;
+      background: #009ee7;
+      color: #f0faff;
+      box-shadow:
+        0 0 15px #2ec5ff,
+        0 0 20px #00aaffee;
+    }
+
+    /* Row / Column Adjust Buttons */
+    .modify-dimensions {
+      margin-top: 12px;
+      display: flex;
+      gap: 1rem;
+      color: #7bc7ffcc;
+      font-size: 0.9rem;
+      user-select: none;
+      justify-content: center;
+    }
+    .modify-dimensions button {
+      background: #003164;
+      border: none;
+      color: #85ccff;
+      padding: 0.3rem 0.9rem;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 6px #0050f2;
+      transition: background 0.15s ease;
+      font-weight: 700;
+      user-select: none;
+    }
+    .modify-dimensions button:hover {
+      background: #004ea0;
+      box-shadow: 0 0 15px #009dff;
+    }
+    .modify-dimensions button:active {
+      transform: scale(0.94);
+    }
+
+    /* Panel Operasi */
+    .panel-operations {
+      max-width: 1080px;
+      width: 100%;
+      background: #011638;
+      padding: 1rem 1.2rem;
+      border-radius: 24px;
+      box-shadow:
+        0 0 30px #33baffdd,
+        inset 0 0 40px #014ea5;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      justify-content: center;
+      user-select: none;
+      margin-bottom: 3rem;
+    }
+    .op-btn {
+      flex: 1 1 120px;
+      max-width: 140px;
+      min-width: 100px;
+      background: #00225f;
+      color: #99ccff;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 22px;
+      padding: 0.7rem 0;
+      cursor: pointer;
+      box-shadow:
+        0 0 20px #1cb5ff89,
+        0 0 30px #007acc66;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background 0.3s ease, transform 0.2s ease;
+      overflow: visible;
+      user-select: none;
+      word-break: break-word;
+      text-align: center;
+    }
+    .op-btn::before {
+      content: '';
+      position: absolute;
+      top: -5px; left: -5px; right: -5px; bottom: -5px;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #00d1ff, #1cb5ff, #004ea5, #00e5ff);
+      background-size: 400% 400%;
+      animation: rotateLight 4s linear infinite;
+      opacity: 0.75;
+      z-index: -1;
+      filter: drop-shadow(0 0 10px #1cb5ffbd);
+    }
+    .op-btn:hover {
+      background: #00aaff;
+      color: #fffefe;
+      box-shadow:
+        0 0 40px #23c7ffcc,
+        0 0 60px #0ad5ffcc;
+      transform: scale(1.05);
+      z-index: 2;
+    }
+    .op-btn:active {
+      transform: scale(0.95);
+    }
+    @keyframes rotateLight {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 400% 50%;
+      }
+    }
+
+    /* Panel Hasil */
+    .result-panel {
+      max-width: 1080px;
+      width: 100%;
+      background: #021037;
+      border-radius: 24px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 0 30px #00aaffdd inset;
+      color: #add8ff;
+      font-weight: 500;
+      user-select: text;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .result-panel h2 {
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+      color: #55c0ff;
+      text-align: center;
+      text-shadow: 0 0 10px #00bfffbb;
+      user-select: none;
+    }
+    .result-matrix {
+      margin: 0 auto;
+      display: inline-grid;
+      grid-gap: 6px;
+      border-radius: 12px;
+      background: #06488c;
+      box-shadow:
+        0 0 12px #00aaffbb inset;
+      padding: 0.8rem 1rem;
+      user-select: text;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .result-matrix div {
+      min-width: 44px;
+      min-height: 36px;
+      background: #023a82;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 10px;
+      color: #b2dbff;
+      box-shadow:
+        0 0 5px #00afffdd inset;
+      user-select: text;
+    }
+    .steps {
+      margin-top: 1.3rem;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #a3c9ffcc;
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 1.2rem;
+      white-space: pre-line;
+      font-family: monospace;
+      border-left: 4px solid #00aaff99;
+      width: 100%;
+      box-sizing: border-box;
+      user-select: text;
+      text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .op-btn {
+        flex: 1 0 90px;
+        max-width: 110px;
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+      }
+      .panel-operations {
+        gap: 0.6rem;
+        padding: 1rem 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .panel-operations {
+        gap: 0.5rem;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+      }
+      .op-btn {
+        flex: 1 0 60px;
+        max-width: 70px;
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+        line-height: 1.1;
+      }
+    }
+    @media (max-width: 420px) {
+      .matrix-grid {
+        overflow-x: auto;
+      }
+      input.matrix-cell {
+        width: 46px;
+        height: 34px;
+        font-size: 1rem;
+      }
+      .result-matrix {
+        max-width: 100%;
+      }
+      .op-btn {
+        flex: 1 0 50px;
+        max-width: 60px;
+        font-size: 0.75rem;
+        padding: 0.25rem 0;
+      }
+    }
