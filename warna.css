@@ -7,9 +7,9 @@
     }
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #0a1c3e 0%, #021021 90%);
+      background: linear-gradient(135deg, #4a1c3e 0%, #2a0821 90%);
       font-family: 'Poppins', sans-serif;
-      color: #eef3ff;
+      color: #ffeef8;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,11 +19,11 @@
     }
     h1 {
       font-weight: 600;
-      color: #00aaff;
+      color: #ff69b4;
       font-size: 2.6rem;
       margin-bottom: 0.5rem;
       text-align: center;
-      text-shadow: 0 0 12px #00aaffcc, 0 0 20px #00aaffbb;
+      text-shadow: 0 0 12px #ff69b4cc, 0 0 20px #ff69b4bb;
       user-select: none;
     }
     header {
@@ -42,12 +42,12 @@
       left: 0;
       font-weight: 700;
       font-size: 1.6rem;
-      color: #00cfff;
+      color: #ff91d4;
       text-shadow:
-        0 0 8px #00cfff,
-        0 0 15px #00cfff,
-        0 0 30px #00e7ff,
-        0 0 60px #00e7ff;
+        0 0 8px #ff91d4,
+        0 0 15px #ff91d4,
+        0 0 30px #ffb3e6,
+        0 0 60px #ffb3e6;
       user-select: none;
     }
 
@@ -65,11 +65,11 @@
 
     /* Individual Matrix Section */
     .matrix-section {
-      background: #0b1640;
+      background: #40162b;
       border-radius: 16px;
       box-shadow:
-        0 0 25px #02c8ffcc inset,
-        0 0 35px #02c8ffaa;
+        0 0 25px #ff66cccc inset,
+        0 0 35px #ff66ccaa;
       flex: 1 1 420px;
       min-width: 320px;
       display: flex;
@@ -88,10 +88,10 @@
     .matrix-section h2 {
       font-weight: 600;
       font-size: 1.4rem;
-      color: #7bdfff;
+      color: #ffb3d9;
       margin-bottom: 1rem;
       text-align: center;
-      text-shadow: 0 0 8px #00bfffcc;
+      text-shadow: 0 0 8px #ff91d4cc;
     }
 
     /* Ordo controls for each matrix */
@@ -104,48 +104,48 @@
       flex-wrap: wrap;
     }
     .input-ordo label {
-      color: #a8cfff;
+      color: #ffa8d9;
       font-weight: 600;
       font-size: 1rem;
       user-select: none;
       white-space: nowrap;
     }
     .input-ordo select {
-      background: #022051;
+      background: #510239;
       border: none;
       padding: 0.3rem 0.7rem;
       border-radius: 8px;
       font-size: 1rem;
-      color: #c6e8ff;
+      color: #ffc6e8;
       cursor: pointer;
-      box-shadow: 0 0 8px #00aaee77;
+      box-shadow: 0 0 8px #ff69b477;
       transition: background 0.3s ease;
       user-select: none;
     }
     .input-ordo select:hover, .input-ordo select:focus {
-      background: #0340a6;
+      background: #a64085;
       outline: none;
     }
     .input-ordo button {
-      background: #00aaff;
+      background: #ff69b4;
       padding: 0.5rem 1.2rem;
       border-radius: 10px;
       font-weight: 700;
-      color: #f0faff;
+      color: #fff0fa;
       border: none;
       cursor: pointer;
       box-shadow:
-        0 0 15px #00aaffcc,
-        0 0 40px #00ccff77;
+        0 0 15px #ff69b4cc,
+        0 0 40px #ff66cc77;
       transition: background 0.25s ease;
       flex-shrink: 0;
       user-select: none;
     }
     .input-ordo button:hover {
-      background: #33c6ff;
+      background: #gg66cc;
       box-shadow:
-        0 0 25px #00aaffee,
-        0 0 60px #00ddffdd;
+        0 0 25px #ff69b4ee,
+        0 0 60px #ffb3e6dd;
     }
     .input-ordo button:active {
       transform: scale(0.96);
@@ -155,7 +155,7 @@
     .matrix-grid {
       display: grid;
       gap: 0.8rem;
-      background: #04193b;
+      background: #3b1929;
       border-radius: 12px;
       padding: 1rem;
       justify-content: center;
@@ -167,23 +167,23 @@
       height: 38px;
       border-radius: 8px;
       border: none;
-      background: #0c2659;
-      color: #c6e8ff;
+      background: #59264a;
+      color: #ffc6e8;
       font-size: 1.1rem;
       text-align: center;
       box-shadow:
-        0 0 4px #009ee799 inset,
-        0 0 10px #007acc99;
+        0 0 4px #e79eb499 inset,
+        0 0 10px #cc7ab499;
       transition: background 0.25s ease;
       user-select: text;
     }
     input.matrix-cell:focus {
       outline: none;
-      background: #009ee7;
-      color: #f0faff;
+      background: #e79eb4;
+      color: #fff0fa;
       box-shadow:
-        0 0 15px #2ec5ff,
-        0 0 20px #00aaffee;
+        0 0 15px #ff5ec8,
+        0 0 20px #ff69b4ee;
     }
 
     /* Row / Column Adjust Buttons */
@@ -191,26 +191,26 @@
       margin-top: 12px;
       display: flex;
       gap: 1rem;
-      color: #7bc7ffcc;
+      color: #ff7bc7cc;
       font-size: 0.9rem;
       user-select: none;
       justify-content: center;
     }
     .modify-dimensions button {
-      background: #003164;
+      background: #643150;
       border: none;
-      color: #85ccff;
+      color: #ff85cc;
       padding: 0.3rem 0.9rem;
       border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 0 6px #0050f2;
+      box-shadow: 0 0 6px #f25099;
       transition: background 0.15s ease;
       font-weight: 700;
       user-select: none;
     }
     .modify-dimensions button:hover {
-      background: #004ea0;
-      box-shadow: 0 0 15px #009dff;
+      background: #a04e85;
+      box-shadow: 0 0 15px #ff9dd9;
     }
     .modify-dimensions button:active {
       transform: scale(0.94);
@@ -220,12 +220,12 @@
     .panel-operations {
       max-width: 1080px;
       width: 100%;
-      background: #011638;
+      background: #381116;
       padding: 1rem 1.2rem;
       border-radius: 24px;
       box-shadow:
-        0 0 30px #33baffdd,
-        inset 0 0 40px #014ea5;
+        0 0 30px #ff33badd,
+        inset 0 0 40px #a5144e;
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem;
@@ -237,16 +237,16 @@
       flex: 1 1 120px;
       max-width: 140px;
       min-width: 100px;
-      background: #00225f;
-      color: #99ccff;
+      background: #5f2244;
+      color: #ff99cc;
       font-weight: 700;
       font-size: 1rem;
       border-radius: 22px;
       padding: 0.7rem 0;
       cursor: pointer;
       box-shadow:
-        0 0 20px #1cb5ff89,
-        0 0 30px #007acc66;
+        0 0 20px #ff1cb589,
+        0 0 30px #cc7a9966;
       border: none;
       display: flex;
       align-items: center;
@@ -263,19 +263,19 @@
       position: absolute;
       top: -5px; left: -5px; right: -5px; bottom: -5px;
       border-radius: 25px;
-      background: linear-gradient(90deg, #00d1ff, #1cb5ff, #004ea5, #00e5ff);
+      background: linear-gradient(90deg, #ff00d1, #ff1cb5, #a5004e, #ff00e5);
       background-size: 400% 400%;
       animation: rotateLight 4s linear infinite;
       opacity: 0.75;
       z-index: -1;
-      filter: drop-shadow(0 0 10px #1cb5ffbd);
+      filter: drop-shadow(0 0 10px #ff1cb5bd);
     }
     .op-btn:hover {
-      background: #00aaff;
+      background: #ff69b4;
       color: #fffefe;
       box-shadow:
-        0 0 40px #23c7ffcc,
-        0 0 60px #0ad5ffcc;
+        0 0 40px #ff23c7cc,
+        0 0 60px #ff0ad5cc;
       transform: scale(1.05);
       z-index: 2;
     }
@@ -295,11 +295,11 @@
     .result-panel {
       max-width: 1080px;
       width: 100%;
-      background: #021037;
+      background: #371027;
       border-radius: 24px;
       padding: 1.5rem 2rem;
-      box-shadow: 0 0 30px #00aaffdd inset;
-      color: #add8ff;
+      box-shadow: 0 0 30px #ff69b4dd inset;
+      color: #ffadd8;
       font-weight: 500;
       user-select: text;
       min-height: 170px;
@@ -310,9 +310,9 @@
     .result-panel h2 {
       font-weight: 700;
       margin-bottom: 1.4rem;
-      color: #55c0ff;
+      color: #ff55c0;
       text-align: center;
-      text-shadow: 0 0 10px #00bfffbb;
+      text-shadow: 0 0 10px #ff91d4bb;
       user-select: none;
     }
     .result-matrix {
@@ -320,9 +320,9 @@
       display: inline-grid;
       grid-gap: 6px;
       border-radius: 12px;
-      background: #06488c;
+      background: #8c4870;
       box-shadow:
-        0 0 12px #00aaffbb inset;
+        0 0 12px #ff69b4bb inset;
       padding: 0.8rem 1rem;
       user-select: text;
       max-width: 100%;
@@ -331,29 +331,29 @@
     .result-matrix div {
       min-width: 44px;
       min-height: 36px;
-      background: #023a82;
+      background: #82395a;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
       font-weight: 600;
       border-radius: 10px;
-      color: #b2dbff;
+      color: #ffb2db;
       box-shadow:
-        0 0 5px #00afffdd inset;
+        0 0 5px #ff69b4dd inset;
       user-select: text;
     }
     .steps {
       margin-top: 1.3rem;
       font-size: 1rem;
       line-height: 1.4;
-      color: #a3c9ffcc;
+      color: #ffa3c9cc;
       max-height: 200px;
       overflow-y: auto;
       padding-right: 1.2rem;
       white-space: pre-line;
       font-family: monospace;
-      border-left: 4px solid #00aaff99;
+      border-left: 4px solid #ff69b499;
       width: 100%;
       box-sizing: border-box;
       user-select: text;
